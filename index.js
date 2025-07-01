@@ -16,9 +16,9 @@ mongoose.connect(MONGO_URI, {
 .then(() => console.log('MongoDB connected'))
 .catch((err) => console.log('Connection error:', err.message));
 
-// app.get('/' , (req , res) =>{
-//     res.send("Welcome World")
-// })
+app.get('/' , (req , res) =>{
+    res.send("Hello World")
+})
 
 app.use("/public", express.static("public"));
 app.use(require('./routes/ProductRoute'))
