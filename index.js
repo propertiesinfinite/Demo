@@ -20,7 +20,9 @@ app.get('/' , (req , res) =>{
     res.send("Hello World")
 })
 
-app.use("/public", express.static("public"));
+const path = require("path");
+app.use("/public", express.static(path.join(__dirname, "public")));
+
 app.use(require('./routes/ProductRoute'))
 app.use(require('./routes/UserRoute'))
 app.use(require('./routes/CartRoute'))
